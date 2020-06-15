@@ -18,7 +18,7 @@ public class SignUpController {
 	
 	
 	@PostMapping
-	public Login CreateUser(@RequestBody Login login) {
+	public Login CreateUserLogin(@RequestBody Login login) {
 		
 		
 		Configuration config = new Configuration().configure();
@@ -43,9 +43,18 @@ public class SignUpController {
 		
 	}
 	
-//	@PostMapping
-//	public User signUpNewUser(@RequestBody User user) {
-//		return user;
-//	}
+	@PostMapping(path = "/createUser")
+	public User CreateUser(@RequestBody User user) {
+		
+		Configuration config = new Configuration().configure();
+		SessionFactory sessionFactory = config.buildSessionFactory();	
+		Session session = sessionFactory.openSession();
+		Transaction tr = session.beginTransaction();
+		
+		session.save(user);
+		tr.commit();
+		session.close();
+		return user;
+	}
 
 }
