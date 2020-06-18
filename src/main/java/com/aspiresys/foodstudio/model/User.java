@@ -1,16 +1,21 @@
 package com.aspiresys.foodstudio.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User {
-	
+
 	@Id
 	private int userId;
 	private String name;
 	private String email;
 	private String mobileNo;
+//	@OneToOne(cascade = CascadeType.ALL)
+	//@JoinColumn(name="cartId")
 	private int cartId;
 	private int addressId;
 	private int orderId;
@@ -40,6 +45,7 @@ public class User {
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
 	}
+	
 	public int getCartId() {
 		return cartId;
 	}
