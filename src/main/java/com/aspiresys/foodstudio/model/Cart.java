@@ -1,17 +1,15 @@
 package com.aspiresys.foodstudio.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
-@Entity
+//@Entity
 public class Cart {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	//@Id
+	//@GeneratedValue(strategy=GenerationType.AUTO)
 	//@OneToOne(cascade = CascadeType.ALL)
 	private int cartId;
 	private int restaurantId;

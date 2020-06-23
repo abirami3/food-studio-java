@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aspiresys.foodstudio.model.Login;
-import com.aspiresys.foodstudio.model.User;
+import com.aspiresys.foodstudio.model.Users;
 import com.aspiresys.foodstudio.service.SignUpService;
 import com.aspiresys.foodstudio.util.Util;
 
@@ -49,7 +49,7 @@ public class SignUpController {
 	}
 	
 	@PostMapping(path = "/createUser")
-	public User CreateUser(@RequestBody User user) {
+	public Users CreateUser(@RequestBody Users user) {
 		
 //		Session session = Util.getSessionFactory().openSession();
 //		Transaction tr = session.beginTransaction();

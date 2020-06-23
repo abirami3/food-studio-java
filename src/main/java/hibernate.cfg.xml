@@ -8,10 +8,13 @@
         <property name="hibernate.connection.password">Abii@123</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/food_studio</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
         <mapping class = "com.aspiresys.foodstudio.model.Login"/>
-        <mapping class = "com.aspiresys.foodstudio.model.User"/>
+        <mapping class = "com.aspiresys.foodstudio.model.Users"/>
         <mapping class = "com.aspiresys.foodstudio.model.Cart"/>
+        <mapping class = "com.aspiresys.foodstudio.model.Address"/>
+        <mapping class = "com.aspiresys.foodstudio.model.Orders"/>
     </session-factory>
 </hibernate-configuration>

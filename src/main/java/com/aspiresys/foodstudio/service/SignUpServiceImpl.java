@@ -5,7 +5,7 @@ import org.hibernate.Transaction;
 import org.springframework.stereotype.Service;
 
 import com.aspiresys.foodstudio.model.Login;
-import com.aspiresys.foodstudio.model.User;
+import com.aspiresys.foodstudio.model.Users;
 import com.aspiresys.foodstudio.util.Util;
 
 @Service
@@ -20,7 +20,12 @@ public class SignUpServiceImpl implements SignUpService{
 		try {
 		login.setRole("USER");
 		
-	session.save(login);
+		//System.out.println(user);
+		//login.setUser(user);
+		
+		session.persist(login);
+		
+		System.out.println(login);
 		
 		tr.commit();
 		session.close();
@@ -36,7 +41,7 @@ public class SignUpServiceImpl implements SignUpService{
 	}
 
 	@Override
-	public User CreateUser(User user) {
+	public Users CreateUser(Users user) {
 		
 		Session session = Util.getSessionFactory().openSession();
 		Transaction tr = session.beginTransaction();
